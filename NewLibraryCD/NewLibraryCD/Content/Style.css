@@ -1,0 +1,84 @@
+﻿.text-for-filter{
+    color:#061122;
+    font-size:18px;
+    color:#ff6a00;
+}
+
+.bold-text{
+    color:#061122;
+    font-size:16px;
+    color:#0f0e9c;
+}
+.filter-table{
+    width:auto;
+    margin:auto;
+
+}
+filter-table tr{
+    min-width:700px;
+}
+.filter-table td {
+    padding: 0 10px;
+}
+/*.ui-menu-item-wrapper{
+    background-color:aquamarine;
+}*/
+.highlight {
+    background-color:#c5eaff;
+    width:300px;
+    border:solid 1px #165c7a;
+    border-radius: 2px 2px;
+    padding-top:1px;
+    box-shadow: #808080 2px 2px;
+    padding-left:3px;
+    padding-right:3px;
+    min-height:100px;
+}
+.highlight li {
+    margin-top: 2px;
+    margin-bottom:2px;
+    border-bottom:solid 1px #b1a8a8;
+    font-size:18px;
+    list-style-type:none;
+    min-height:30px;
+    
+}
+
+.highlight li:hover {
+    margin-top: 2px;
+    margin-bottom:2px;
+    border-bottom:solid 1px #b1a8a8;
+    font-size:18px;
+    list-style-type:none;
+    min-height:30px;
+    cursor:pointer;
+    background-color:#0a5485;
+    color:#ffffff;
+}
+
+/*
+	Ratings Stars
+	(with as little code as possible)
+*/
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+  font-size:20px;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover,
+.rating > span:hover ~ span {
+  color: transparent;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   left: 0; 
+   color: gold;
+}

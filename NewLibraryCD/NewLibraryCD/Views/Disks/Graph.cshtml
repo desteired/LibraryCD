@@ -1,0 +1,23 @@
+﻿<table class="filter-table">
+    <tr>
+        <td>            
+            @Html.DropDownList("selectedDirection", ViewBag.DirectionList as SelectList, "Select Direction", new { @class = "form-control" })
+        </td>
+        
+        <td>
+            <button id="buttonViewChart" class="btn btn-default">Показать</button>
+        </td>
+    </tr>
+</table>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+@section scripts{
+    
+<script src="~/Scripts/highcharts.js"></script>
+<script src="~/Scripts/exporting.js"></script>
+<script src="~/Scripts/chartScript.js"></script>
+
+    }
+

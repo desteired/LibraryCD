@@ -1,0 +1,53 @@
+﻿@model PagedList.IPagedList<NewLibraryCD.Models.DiskViewModel>
+@using PagedList.Mvc;
+<div id="table_cont">
+    <table class="table table_view_disks" id="tableListDisk">
+        @if (Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+
+                <tr data-disk-id="@item.DiskId">
+                    <td width="10%">
+                        <img width="150" height="150" src="@Url.Action("GetPhoto", new { id = item.DiskId })" />
+                    </td>
+                    <td width="90%">
+                        <span class="bold-text">Название: </span><span>@Html.DisplayFor(modelItem => item.NameCD)</span><br>
+                        <span class="bold-text">Исполнитель: </span><span>@Html.DisplayFor(modelItem => item.Singer)</span><br>
+                        <span class="bold-text">Год издания: </span><span>@Html.DisplayFor(modelItem => item.Year)</span><br>
+                        <span class="bold-text">Направление: </span><span>@Html.DisplayFor(modelItem => item.DirectionName)</span><br>
+                        <span class="bold-text">Средняя оценка: </span><span data-tot-rat>@Html.DisplayFor(modelItem => item.Rating)</span><br>
+                        <span class="bold-text">Ваша оценка: </span><span data-your-rat>@Html.DisplayFor(modelItem => item.YourRating)</span><br>
+                        <span class="bold-text">Описание: </span><span>@Html.DisplayFor(modelItem => item.Description)</span><br>
+
+                        <div class="rating" id="rating">
+                            <span data-id="10">☆</span><span data-id="9">☆</span>
+                            <span data-id="8">☆</span><span data-id="7">☆</span>
+                            <span data-id="6">☆</span><span data-id="5">☆</span>
+                            <span data-id="4">☆</span><span data-id="3">☆</span>
+                            <span data-id="2">☆</span><span data-id="1">☆</span>
+                        </div>
+                        <br>
+
+                        <a href="#" data-remove-disk="@item.DiskId">Delete</a>
+                        <br />
+                        <hr />
+                    </td>
+                </tr>
+
+            }
+        }
+        else
+        {
+            <tr><td>Нет результатов поиска</td></tr>
+        }
+
+
+
+    </table>
+    <div class="text-center">
+        Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+</div>
