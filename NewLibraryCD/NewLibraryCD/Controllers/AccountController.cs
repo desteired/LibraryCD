@@ -77,7 +77,7 @@ namespace NewLibraryCD.Controllers
                     user = context.Users.FirstOrDefault(u => u.UserName == model.UserName && u.Password == model.Password);
                 }
 
-                if(user == null)
+                if(user != null)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, true);
                     return RedirectToAction("Index", "Disks");
